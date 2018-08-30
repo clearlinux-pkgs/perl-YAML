@@ -1,0 +1,5 @@
+1.26
+perl(Spiffy)
+perl(Test::Base)
+perl(Test::Deep)
+perl(Test::YAML)
