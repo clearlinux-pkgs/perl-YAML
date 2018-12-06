@@ -4,7 +4,7 @@
 #
 Name     : perl-YAML
 Version  : 1.27
-Release  : 8
+Release  : 9
 URL      : https://cpan.metacpan.org/authors/id/T/TI/TINITA/YAML-1.27.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/T/TI/TINITA/YAML-1.27.tar.gz
 Summary  : "YAML Ain't Markup Languageâ¢"
