@@ -4,10 +4,10 @@
 #
 Name     : perl-YAML
 Version  : 1.27
-Release  : 9
+Release  : 10
 URL      : https://cpan.metacpan.org/authors/id/T/TI/TINITA/YAML-1.27.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/T/TI/TINITA/YAML-1.27.tar.gz
-Summary  : "YAML Ain't Markup Languageâ¢"
+Summary  : Perl/CPAN Module YAML : YAML Aint Markup Language
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-YAML-license = %{version}-%{release}
@@ -27,6 +27,7 @@ This document describes YAML version 1.27.
 Summary: dev components for the perl-YAML package.
 Group: Development
 Provides: perl-YAML-devel = %{version}-%{release}
+Requires: perl-YAML = %{version}-%{release}
 
 %description dev
 dev components for the perl-YAML package.
