@@ -4,13 +4,14 @@
 #
 Name     : perl-YAML
 Version  : 1.29
-Release  : 12
+Release  : 13
 URL      : https://cpan.metacpan.org/authors/id/T/TI/TINITA/YAML-1.29.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/T/TI/TINITA/YAML-1.29.tar.gz
-Summary  : Perl/CPAN Module YAML : YAML Aint Markup Language
+Summary  : "YAML Ain't Markup Language™"
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-YAML-license = %{version}-%{release}
+Requires: perl-YAML-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Spiffy)
 BuildRequires : perl(Test::Base)
@@ -19,7 +20,7 @@ BuildRequires : perl(Test::YAML)
 
 %description
 NAME
-YAML - YAML Ain't Markup Languageâ¢
+YAML - YAML Ain't Markup Language™
 VERSION
 This document describes YAML version 1.29.
 
@@ -27,7 +28,6 @@ This document describes YAML version 1.29.
 Summary: dev components for the perl-YAML package.
 Group: Development
 Provides: perl-YAML-devel = %{version}-%{release}
-Requires: perl-YAML = %{version}-%{release}
 Requires: perl-YAML = %{version}-%{release}
 
 %description dev
@@ -42,14 +42,24 @@ Group: Default
 license components for the perl-YAML package.
 
 
+%package perl
+Summary: perl components for the perl-YAML package.
+Group: Default
+Requires: perl-YAML = %{version}-%{release}
+
+%description perl
+perl components for the perl-YAML package.
+
+
 %prep
 %setup -q -n YAML-1.29
+cd %{_builddir}/YAML-1.29
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -59,7 +69,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -68,7 +78,7 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-YAML
-cp LICENSE %{buildroot}/usr/share/package-licenses/perl-YAML/LICENSE
+cp %{_builddir}/YAML-1.29/LICENSE %{buildroot}/usr/share/package-licenses/perl-YAML/504aabdcdf233a87d7f7f1982dc579eb239b00de
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -81,29 +91,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/YAML.pm
-/usr/lib/perl5/vendor_perl/5.28.2/YAML.pod
-/usr/lib/perl5/vendor_perl/5.28.2/YAML/Any.pm
-/usr/lib/perl5/vendor_perl/5.28.2/YAML/Any.pod
-/usr/lib/perl5/vendor_perl/5.28.2/YAML/Dumper.pm
-/usr/lib/perl5/vendor_perl/5.28.2/YAML/Dumper.pod
-/usr/lib/perl5/vendor_perl/5.28.2/YAML/Dumper/Base.pm
-/usr/lib/perl5/vendor_perl/5.28.2/YAML/Dumper/Base.pod
-/usr/lib/perl5/vendor_perl/5.28.2/YAML/Error.pm
-/usr/lib/perl5/vendor_perl/5.28.2/YAML/Error.pod
-/usr/lib/perl5/vendor_perl/5.28.2/YAML/Loader.pm
-/usr/lib/perl5/vendor_perl/5.28.2/YAML/Loader.pod
-/usr/lib/perl5/vendor_perl/5.28.2/YAML/Loader/Base.pm
-/usr/lib/perl5/vendor_perl/5.28.2/YAML/Loader/Base.pod
-/usr/lib/perl5/vendor_perl/5.28.2/YAML/Marshall.pm
-/usr/lib/perl5/vendor_perl/5.28.2/YAML/Marshall.pod
-/usr/lib/perl5/vendor_perl/5.28.2/YAML/Mo.pm
-/usr/lib/perl5/vendor_perl/5.28.2/YAML/Node.pm
-/usr/lib/perl5/vendor_perl/5.28.2/YAML/Node.pod
-/usr/lib/perl5/vendor_perl/5.28.2/YAML/Tag.pm
-/usr/lib/perl5/vendor_perl/5.28.2/YAML/Tag.pod
-/usr/lib/perl5/vendor_perl/5.28.2/YAML/Types.pm
-/usr/lib/perl5/vendor_perl/5.28.2/YAML/Types.pod
 
 %files dev
 %defattr(-,root,root,-)
@@ -121,4 +108,30 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/perl-YAML/LICENSE
+/usr/share/package-licenses/perl-YAML/504aabdcdf233a87d7f7f1982dc579eb239b00de
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/YAML.pm
+/usr/lib/perl5/vendor_perl/5.30.1/YAML.pod
+/usr/lib/perl5/vendor_perl/5.30.1/YAML/Any.pm
+/usr/lib/perl5/vendor_perl/5.30.1/YAML/Any.pod
+/usr/lib/perl5/vendor_perl/5.30.1/YAML/Dumper.pm
+/usr/lib/perl5/vendor_perl/5.30.1/YAML/Dumper.pod
+/usr/lib/perl5/vendor_perl/5.30.1/YAML/Dumper/Base.pm
+/usr/lib/perl5/vendor_perl/5.30.1/YAML/Dumper/Base.pod
+/usr/lib/perl5/vendor_perl/5.30.1/YAML/Error.pm
+/usr/lib/perl5/vendor_perl/5.30.1/YAML/Error.pod
+/usr/lib/perl5/vendor_perl/5.30.1/YAML/Loader.pm
+/usr/lib/perl5/vendor_perl/5.30.1/YAML/Loader.pod
+/usr/lib/perl5/vendor_perl/5.30.1/YAML/Loader/Base.pm
+/usr/lib/perl5/vendor_perl/5.30.1/YAML/Loader/Base.pod
+/usr/lib/perl5/vendor_perl/5.30.1/YAML/Marshall.pm
+/usr/lib/perl5/vendor_perl/5.30.1/YAML/Marshall.pod
+/usr/lib/perl5/vendor_perl/5.30.1/YAML/Mo.pm
+/usr/lib/perl5/vendor_perl/5.30.1/YAML/Node.pm
+/usr/lib/perl5/vendor_perl/5.30.1/YAML/Node.pod
+/usr/lib/perl5/vendor_perl/5.30.1/YAML/Tag.pm
+/usr/lib/perl5/vendor_perl/5.30.1/YAML/Tag.pod
+/usr/lib/perl5/vendor_perl/5.30.1/YAML/Types.pm
+/usr/lib/perl5/vendor_perl/5.30.1/YAML/Types.pod
