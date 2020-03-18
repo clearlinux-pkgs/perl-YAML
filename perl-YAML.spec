@@ -4,10 +4,10 @@
 #
 Name     : perl-YAML
 Version  : 1.30
-Release  : 14
+Release  : 15
 URL      : https://cpan.metacpan.org/authors/id/T/TI/TINITA/YAML-1.30.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/T/TI/TINITA/YAML-1.30.tar.gz
-Summary  : Perl/CPAN Module YAML : YAML Aint Markup Language
+Summary  : "YAML Ain't Markup Language™"
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-YAML-license = %{version}-%{release}
@@ -28,7 +28,6 @@ This document describes YAML version 1.30.
 Summary: dev components for the perl-YAML package.
 Group: Development
 Provides: perl-YAML-devel = %{version}-%{release}
-Requires: perl-YAML = %{version}-%{release}
 Requires: perl-YAML = %{version}-%{release}
 
 %description dev
@@ -113,26 +112,26 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.1/YAML.pm
-/usr/lib/perl5/vendor_perl/5.30.1/YAML.pod
-/usr/lib/perl5/vendor_perl/5.30.1/YAML/Any.pm
-/usr/lib/perl5/vendor_perl/5.30.1/YAML/Any.pod
-/usr/lib/perl5/vendor_perl/5.30.1/YAML/Dumper.pm
-/usr/lib/perl5/vendor_perl/5.30.1/YAML/Dumper.pod
-/usr/lib/perl5/vendor_perl/5.30.1/YAML/Dumper/Base.pm
-/usr/lib/perl5/vendor_perl/5.30.1/YAML/Dumper/Base.pod
-/usr/lib/perl5/vendor_perl/5.30.1/YAML/Error.pm
-/usr/lib/perl5/vendor_perl/5.30.1/YAML/Error.pod
-/usr/lib/perl5/vendor_perl/5.30.1/YAML/Loader.pm
-/usr/lib/perl5/vendor_perl/5.30.1/YAML/Loader.pod
-/usr/lib/perl5/vendor_perl/5.30.1/YAML/Loader/Base.pm
-/usr/lib/perl5/vendor_perl/5.30.1/YAML/Loader/Base.pod
-/usr/lib/perl5/vendor_perl/5.30.1/YAML/Marshall.pm
-/usr/lib/perl5/vendor_perl/5.30.1/YAML/Marshall.pod
-/usr/lib/perl5/vendor_perl/5.30.1/YAML/Mo.pm
-/usr/lib/perl5/vendor_perl/5.30.1/YAML/Node.pm
-/usr/lib/perl5/vendor_perl/5.30.1/YAML/Node.pod
-/usr/lib/perl5/vendor_perl/5.30.1/YAML/Tag.pm
-/usr/lib/perl5/vendor_perl/5.30.1/YAML/Tag.pod
-/usr/lib/perl5/vendor_perl/5.30.1/YAML/Types.pm
-/usr/lib/perl5/vendor_perl/5.30.1/YAML/Types.pod
+/usr/lib/perl5/vendor_perl/5.30.2/YAML.pm
+/usr/lib/perl5/vendor_perl/5.30.2/YAML.pod
+/usr/lib/perl5/vendor_perl/5.30.2/YAML/Any.pm
+/usr/lib/perl5/vendor_perl/5.30.2/YAML/Any.pod
+/usr/lib/perl5/vendor_perl/5.30.2/YAML/Dumper.pm
+/usr/lib/perl5/vendor_perl/5.30.2/YAML/Dumper.pod
+/usr/lib/perl5/vendor_perl/5.30.2/YAML/Dumper/Base.pm
+/usr/lib/perl5/vendor_perl/5.30.2/YAML/Dumper/Base.pod
+/usr/lib/perl5/vendor_perl/5.30.2/YAML/Error.pm
+/usr/lib/perl5/vendor_perl/5.30.2/YAML/Error.pod
+/usr/lib/perl5/vendor_perl/5.30.2/YAML/Loader.pm
+/usr/lib/perl5/vendor_perl/5.30.2/YAML/Loader.pod
+/usr/lib/perl5/vendor_perl/5.30.2/YAML/Loader/Base.pm
+/usr/lib/perl5/vendor_perl/5.30.2/YAML/Loader/Base.pod
+/usr/lib/perl5/vendor_perl/5.30.2/YAML/Marshall.pm
+/usr/lib/perl5/vendor_perl/5.30.2/YAML/Marshall.pod
+/usr/lib/perl5/vendor_perl/5.30.2/YAML/Mo.pm
+/usr/lib/perl5/vendor_perl/5.30.2/YAML/Node.pm
+/usr/lib/perl5/vendor_perl/5.30.2/YAML/Node.pod
+/usr/lib/perl5/vendor_perl/5.30.2/YAML/Tag.pm
+/usr/lib/perl5/vendor_perl/5.30.2/YAML/Tag.pod
+/usr/lib/perl5/vendor_perl/5.30.2/YAML/Types.pm
+/usr/lib/perl5/vendor_perl/5.30.2/YAML/Types.pod
