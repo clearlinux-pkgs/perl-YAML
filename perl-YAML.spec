@@ -7,7 +7,7 @@
 #
 Name     : perl-YAML
 Version  : 1.31
-Release  : 23
+Release  : 24
 URL      : https://cpan.metacpan.org/authors/id/I/IN/INGY/YAML-1.31.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/I/IN/INGY/YAML-1.31.tar.gz
 Summary  : "YAML Ain't Markup Language™"
